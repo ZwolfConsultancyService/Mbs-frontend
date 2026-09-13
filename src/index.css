@@ -1,3 +1,4 @@
+
 @import "tailwindcss";
 
 @theme {
@@ -8,8 +9,17 @@
   --color-light: #FAF7F9;
 }
 
-body {
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
   margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
   font-family: Inter, system-ui, sans-serif;
   background: #ffffff;
   color: #252525;

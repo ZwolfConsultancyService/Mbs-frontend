@@ -6,6 +6,7 @@ import DoctorSection from "./components/DoctorSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
+import YoutubeSection from "./components/YoutubeSection";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <TreatmentsSection />
       <DoctorSection />
       <TestimonialsSection />
+       <YoutubeSection/>
       <CTASection/>
       <Footer/>
     </>
