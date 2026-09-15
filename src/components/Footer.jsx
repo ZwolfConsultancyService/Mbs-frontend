@@ -39,6 +39,7 @@ const Footer = () => {
             </h3>
 
             <div className="mt-6 flex flex-col gap-4">
+
               <a
                 href="/"
                 className="text-sm text-white/55 transition hover:translate-x-1 hover:text-[#AE2580]"
@@ -61,10 +62,10 @@ const Footer = () => {
               </a>
 
               <a
-                href="/contact"
+                href="/gallery"
                 className="text-sm text-white/55 transition hover:translate-x-1 hover:text-[#AE2580]"
               >
-                Contact
+                Gallery
               </a>
 
               <a
@@ -73,6 +74,7 @@ const Footer = () => {
               >
                 Book Appointment
               </a>
+
             </div>
           </div>
 
@@ -83,6 +85,7 @@ const Footer = () => {
             </h3>
 
             <div className="mt-6 grid grid-cols-2 gap-x-5 gap-y-4">
+
               <a
                 href="/treatments/sciatica"
                 className="text-sm text-white/55 transition hover:text-[#AE2580]"
@@ -138,6 +141,7 @@ const Footer = () => {
               >
                 Headache
               </a>
+
             </div>
           </div>
 
@@ -208,6 +212,7 @@ const Footer = () => {
 
             </div>
           </div>
+
         </div>
 
         {/* Appointment Banner */}
@@ -232,6 +237,7 @@ const Footer = () => {
           </a>
 
         </div>
+
       </div>
 
       {/* Bottom Bar */}

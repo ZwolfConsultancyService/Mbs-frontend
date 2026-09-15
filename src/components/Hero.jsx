@@ -1,12 +1,15 @@
+import { Link } from "react-router-dom";
 import doctorImage from "../assets/Doctor/drpawan.jpeg";
 
 const Hero = () => {
   return (
     <section className="bg-[#FAF7F9]">
+
       <div className="mx-auto grid min-h-[600px] max-w-7xl items-center gap-12 px-6 py-20 md:grid-cols-2">
 
         {/* Left Content */}
         <div>
+
           <p className="mb-4 font-semibold uppercase tracking-widest text-[#AE2580]">
             Chiropractor & Spine Specialist
           </p>
@@ -22,33 +25,43 @@ const Hero = () => {
             pain with Dr. Pawan Srivastava.
           </p>
 
+          {/* Buttons */}
           <div className="flex flex-wrap gap-4">
-            <a
-              href="/appointment"
+
+            {/* Book Appointment */}
+            <Link
+              to="/appointment"
               className="rounded-lg bg-[#AE2580] px-6 py-3 font-semibold text-white transition hover:bg-[#8E1E68]"
             >
               Book Appointment
-            </a>
+            </Link>
 
-            <a
-              href="/treatments"
+            {/* Explore Treatments */}
+            <Link
+              to="/treatments"
               className="rounded-lg border-2 border-[#AE2580] px-6 py-3 font-semibold text-[#AE2580] transition hover:bg-[#AE2580] hover:text-white"
             >
               Explore Treatments
-            </a>
+            </Link>
+
           </div>
+
         </div>
 
+
         {/* Doctor Image */}
-<div className="flex h-[500px] items-center justify-center overflow-hidden rounded-3xl bg-[#F5E8F0] shadow-sm">
-  <img
-    src={doctorImage}
-    alt="Dr. Pawan Srivastava"
-    className="h-full w-full object-contain"
-  />
-</div>
+        <div className="flex h-[500px] items-center justify-center overflow-hidden rounded-3xl bg-[#F5E8F0] shadow-sm">
+
+          <img
+            src={doctorImage}
+            alt="Dr. Pawan Srivastava"
+            className="h-full w-full object-contain"
+          />
+
+        </div>
 
       </div>
+
     </section>
   );
 };
