@@ -11,38 +11,38 @@ const Navbar = () => {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 
         {/* Logo */}
-        <a href="/" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img
             src={logo}
             alt="MBS Mind Body Soul"
             className="h-14 w-auto object-contain"
           />
-        </a>
+        </Link>
 
 
         {/* Desktop Menu */}
         <div className="hidden items-center gap-8 md:flex">
 
-          <a
-            href="/"
+          <Link
+            to="/"
             className="font-medium text-dark transition hover:text-brand"
           >
             Home
-          </a>
+          </Link>
 
-          <a
-            href="/about"
+          <Link
+            to="/about"
             className="font-medium text-dark transition hover:text-brand"
           >
             About
-          </a>
+          </Link>
 
-          <a
-            href="/treatments"
+          <Link
+            to="/treatments"
             className="font-medium text-dark transition hover:text-brand"
           >
             Treatments
-          </a>
+          </Link>
 
           {/* Gallery - unchanged */}
           <a
@@ -81,29 +81,29 @@ const Navbar = () => {
 
           <div className="flex flex-col gap-4">
 
-            <a
-              href="/"
+            <Link
+              to="/"
               className="font-medium text-dark"
               onClick={() => setIsOpen(false)}
             >
               Home
-            </a>
+            </Link>
 
-            <a
-              href="/about"
+            <Link
+              to="/about"
               className="font-medium text-dark"
               onClick={() => setIsOpen(false)}
             >
               About
-            </a>
+            </Link>
 
-            <a
-              href="/treatments"
+            <Link
+              to="/treatments"
               className="font-medium text-dark"
               onClick={() => setIsOpen(false)}
             >
               Treatments
-            </a>
+            </Link>
 
             {/* Gallery - unchanged */}
             <a
