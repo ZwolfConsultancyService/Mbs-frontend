@@ -135,10 +135,10 @@ const Footer = () => {
               </Link>
 
               <Link
-                to="/treatments/migraine"
+                to="/treatments/migraine-pain"
                 className="text-sm text-white/55 transition hover:text-[#AE2580]"
               >
-                Migraine
+                Migraine Pain
               </Link>
 
               <Link

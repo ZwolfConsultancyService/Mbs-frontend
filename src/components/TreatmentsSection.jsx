@@ -6,36 +6,42 @@ const TreatmentsSection = () => {
     {
       number: "01",
       title: "Sciatica",
+      slug: "sciatica",
       description:
         "Personalised care focused on understanding your symptoms and improving movement.",
     },
     {
       number: "02",
       title: "Slip Disc",
+      slug: "slip-disc",
       description:
         "Assessment-led care based on your individual condition and treatment needs.",
     },
     {
       number: "03",
       title: "Back Pain",
+      slug: "back-pain",
       description:
         "A personalised approach to managing discomfort and supporting better mobility.",
     },
     {
       number: "04",
       title: "Frozen Shoulder",
+      slug: "frozen-shoulder",
       description:
         "Individualised care focused on symptoms, mobility and your specific needs.",
     },
     {
       number: "05",
       title: "Knee Pain",
+      slug: "knee-pain",
       description:
         "Care designed around your condition to support comfortable movement and mobility.",
     },
     {
       number: "06",
       title: "Cervical",
+      slug: "cervical",
       description:
         "Personalised assessment and care for cervical discomfort and related symptoms.",
     },
@@ -71,21 +77,20 @@ const TreatmentsSection = () => {
 
         </div>
 
-
         {/* Treatment Cards */}
         <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5 lg:mt-14 lg:grid-cols-3 lg:gap-6">
 
           {treatments.map((treatment) => (
-            <div
+            <Link
               key={treatment.number}
-              className="group relative min-h-[225px] overflow-hidden rounded-[24px] border border-gray-100 bg-[#FAF7F9] p-6 transition-all duration-300 hover:-translate-y-2 hover:bg-[#252525] hover:shadow-2xl sm:min-h-[245px] sm:p-7 lg:min-h-[270px] lg:rounded-[28px] lg:p-8"
+              to={`/treatments/${treatment.slug}`}
+              className="group relative block min-h-[225px] overflow-hidden rounded-[24px] border border-gray-100 bg-[#FAF7F9] p-6 transition-all duration-300 hover:-translate-y-2 hover:bg-[#252525] hover:shadow-2xl sm:min-h-[245px] sm:p-7 lg:min-h-[270px] lg:rounded-[28px] lg:p-8"
             >
 
               {/* Background Number */}
               <span className="absolute -right-3 -top-7 text-[90px] font-black leading-none text-[#AE2580]/10 transition-all duration-300 group-hover:text-white/5 sm:text-[100px] lg:text-[110px]">
                 {treatment.number}
               </span>
-
 
               {/* Top */}
               <div className="relative flex items-center justify-between">
@@ -102,7 +107,6 @@ const TreatmentsSection = () => {
 
               </div>
 
-
               {/* Content */}
               <div className="relative mt-7 sm:mt-8 lg:mt-10">
 
@@ -116,21 +120,18 @@ const TreatmentsSection = () => {
 
               </div>
 
-
               {/* Arrow */}
               <div className="absolute bottom-5 right-5 flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-sm text-[#AE2580] transition-all duration-300 group-hover:border-[#AE2580] group-hover:bg-[#AE2580] group-hover:text-white sm:bottom-6 sm:right-6 sm:h-10 sm:w-10">
                 →
               </div>
 
-
               {/* Bottom Line */}
               <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#AE2580] transition-all duration-500 group-hover:w-full" />
 
-            </div>
+            </Link>
           ))}
 
         </div>
-
 
         {/* View All Treatments */}
         <div className="mt-8 text-center sm:mt-10 md:mt-12">
@@ -140,9 +141,11 @@ const TreatmentsSection = () => {
             className="inline-flex items-center gap-2 rounded-xl bg-[#AE2580] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#8E1E68] sm:px-7 sm:py-3.5 sm:text-base"
           >
             View All Treatments
+
             <span className="text-lg">
               →
             </span>
+
           </Link>
 
         </div>

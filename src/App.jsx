@@ -20,6 +20,7 @@ import YoutubeSection from "./components/YoutubeSection";
 import Gallery from "./components/Gallery";
 
 import Treatments from "./pages/Treatments";
+import TreatmentDetail from "./pages/TreatmentDetail";
 import About from "./pages/About";
 import Appointment from "./pages/Appointment";
 import GalleryPage from "./pages/GalleryPage";
@@ -72,13 +73,15 @@ function App() {
       <Routes>
 
         {/* ================= HOME ================= */}
+
         <Route
           path="/"
           element={<Home />}
         />
 
 
-        {/* ================= TREATMENTS ================= */}
+        {/* ================= ALL TREATMENTS ================= */}
+
         <Route
           path="/treatments"
           element={
@@ -91,7 +94,22 @@ function App() {
         />
 
 
+        {/* ================= TREATMENT DETAIL ================= */}
+
+        <Route
+          path="/treatments/:slug"
+          element={
+            <>
+              <Navbar />
+              <TreatmentDetail />
+              <Footer />
+            </>
+          }
+        />
+
+
         {/* ================= ABOUT ================= */}
+
         <Route
           path="/about"
           element={
@@ -105,6 +123,7 @@ function App() {
 
 
         {/* ================= APPOINTMENT ================= */}
+
         <Route
           path="/appointment"
           element={
@@ -118,6 +137,7 @@ function App() {
 
 
         {/* ================= GALLERY ================= */}
+
         <Route
           path="/gallery"
           element={

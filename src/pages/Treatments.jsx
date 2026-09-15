@@ -1,62 +1,75 @@
+
+import { Link } from "react-router-dom";
+
 const Treatments = () => {
   const treatments = [
     {
       number: "01",
       title: "Sciatica",
+      slug: "sciatica",
       description:
         "Personalised care focused on understanding your symptoms and improving movement.",
     },
     {
       number: "02",
       title: "Slip Disc",
+      slug: "slip-disc",
       description:
         "Assessment-led care based on your individual condition and treatment needs.",
     },
     {
       number: "03",
       title: "Back Pain",
+      slug: "back-pain",
       description:
         "A personalised approach to managing discomfort and supporting better mobility.",
     },
     {
       number: "04",
       title: "Frozen Shoulder",
+      slug: "frozen-shoulder",
       description:
         "Individualised care focused on symptoms, mobility and your specific needs.",
     },
     {
       number: "05",
       title: "Knee Pain",
+      slug: "knee-pain",
       description:
         "Care designed around your condition to support comfortable movement and mobility.",
     },
     {
       number: "06",
       title: "Cervical",
+      slug: "cervical",
       description:
         "Personalised assessment and care for cervical discomfort and related symptoms.",
     },
     {
       number: "07",
       title: "Navel Alignment",
+      slug: "navel-alignment",
       description:
         "An individualised, assessment-based approach according to your concerns.",
     },
     {
       number: "08",
       title: "Migraine Pain",
+      slug: "migraine-pain",
       description:
         "Understanding your symptoms first, followed by a personalised care approach.",
     },
     {
       number: "09",
       title: "Headache",
+      slug: "headache",
       description:
         "Care tailored around your symptoms and individual treatment requirements.",
     },
     {
       number: "10",
       title: "TMJ Alignment",
+      slug: "tmj-alignment",
       description:
         "Personalised care focused on jaw discomfort, movement and individual treatment needs.",
     },
@@ -89,9 +102,10 @@ const Treatments = () => {
         {/* Cards */}
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {treatments.map((treatment) => (
-            <div
+            <Link
               key={treatment.number}
-              className="group relative min-h-[270px] overflow-hidden rounded-[28px] border border-gray-100 bg-[#FAF7F9] p-8 transition-all duration-300 hover:-translate-y-2 hover:bg-[#252525] hover:shadow-2xl"
+              to={`/treatments/${treatment.slug}`}
+              className="group relative block min-h-[270px] overflow-hidden rounded-[28px] border border-gray-100 bg-[#FAF7F9] p-8 transition-all duration-300 hover:-translate-y-2 hover:bg-[#252525] hover:shadow-2xl"
             >
               <span className="absolute -right-3 -top-8 text-[110px] font-black leading-none text-[#AE2580]/10 transition-all duration-300 group-hover:text-white/5">
                 {treatment.number}
@@ -102,7 +116,7 @@ const Treatments = () => {
                   <span className="text-xl">✦</span>
                 </div>
 
-                <span className="text-sm font-semibold text-gray-400 group-hover:text-white/40">
+                <span className="text-sm font-semibold text-gray-400 transition-colors group-hover:text-white/40">
                   {treatment.number}
                 </span>
               </div>
@@ -122,7 +136,7 @@ const Treatments = () => {
               </div>
 
               <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#AE2580] transition-all duration-500 group-hover:w-full" />
-            </div>
+            </Link>
           ))}
         </div>
 
@@ -140,12 +154,12 @@ const Treatments = () => {
               </h3>
             </div>
 
-            <a
-              href="/appointment"
+            <Link
+              to="/appointment"
               className="rounded-xl bg-[#AE2580] px-7 py-3.5 font-semibold text-white transition hover:bg-[#8E1E68]"
             >
               Book Appointment
-            </a>
+            </Link>
 
           </div>
         </div>

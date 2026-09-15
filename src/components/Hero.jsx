@@ -12,18 +12,20 @@ const Hero = () => {
         <div>
 
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[#AE2580] sm:mb-4 sm:text-base">
-            Chiropractor & Spine Specialist
+            Chiropractor & Pain Specialist
           </p>
 
           <h1 className="mb-4 text-3xl font-bold leading-tight text-[#252525] sm:text-4xl md:mb-6 md:text-6xl">
-            Personalised Care
+            Holistic Healing
             <br />
-            for Better Movement
+            for a Better You.
           </h1>
 
           <p className="mb-6 max-w-xl text-base leading-7 text-gray-600 sm:text-lg sm:leading-8 md:mb-8">
-            Personalised, non-surgical approaches to managing spine and knee
-            pain with Dr. Pawan Srivastava.
+            
+
+           Personalised care to relieve pain, restore movement, and help you live a healthier, more active life.
+
           </p>
 
           {/* Buttons */}
