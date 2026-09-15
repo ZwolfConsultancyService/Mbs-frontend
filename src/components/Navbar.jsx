@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo/mbslogo.jpeg";
@@ -8,20 +9,21 @@ const Navbar = () => {
   return (
     <nav className="w-full bg-white shadow-sm">
 
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      {/* Main Navbar */}
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 md:py-4">
 
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <img
             src={logo}
             alt="MBS Mind Body Soul"
-            className="h-14 w-auto object-contain"
+            className="h-11 w-auto object-contain sm:h-14"
           />
         </Link>
 
 
         {/* Desktop Menu */}
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-6 md:flex lg:gap-8">
 
           <Link
             to="/"
@@ -44,7 +46,6 @@ const Navbar = () => {
             Treatments
           </Link>
 
-          {/* Gallery - unchanged */}
           <a
             href="/gallery"
             className="font-medium text-dark transition hover:text-brand"
@@ -52,10 +53,9 @@ const Navbar = () => {
             Gallery
           </a>
 
-          {/* Book Appointment */}
           <Link
             to="/appointment"
-            className="rounded-lg bg-brand px-5 py-3 font-semibold text-white transition hover:bg-brand-dark"
+            className="rounded-lg bg-brand px-4 py-2.5 font-semibold text-white transition hover:bg-brand-dark lg:px-5 lg:py-3"
           >
             Book Appointment
           </Link>
@@ -67,9 +67,10 @@ const Navbar = () => {
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="text-2xl text-brand md:hidden"
+          aria-label="Toggle menu"
+          className="flex h-10 w-10 items-center justify-center rounded-lg text-2xl text-brand md:hidden"
         >
-          ☰
+          {isOpen ? "✕" : "☰"}
         </button>
 
       </div>
@@ -77,13 +78,13 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="border-t bg-white px-6 py-5 md:hidden">
+        <div className="border-t border-gray-100 bg-white px-4 py-3 shadow-sm md:hidden">
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-1">
 
             <Link
               to="/"
-              className="font-medium text-dark"
+              className="rounded-lg px-3 py-2.5 font-medium text-dark transition hover:bg-[#FAF7F9] hover:text-brand"
               onClick={() => setIsOpen(false)}
             >
               Home
@@ -91,7 +92,7 @@ const Navbar = () => {
 
             <Link
               to="/about"
-              className="font-medium text-dark"
+              className="rounded-lg px-3 py-2.5 font-medium text-dark transition hover:bg-[#FAF7F9] hover:text-brand"
               onClick={() => setIsOpen(false)}
             >
               About
@@ -99,25 +100,23 @@ const Navbar = () => {
 
             <Link
               to="/treatments"
-              className="font-medium text-dark"
+              className="rounded-lg px-3 py-2.5 font-medium text-dark transition hover:bg-[#FAF7F9] hover:text-brand"
               onClick={() => setIsOpen(false)}
             >
               Treatments
             </Link>
 
-            {/* Gallery - unchanged */}
             <a
               href="/gallery"
-              className="font-medium text-dark"
+              className="rounded-lg px-3 py-2.5 font-medium text-dark transition hover:bg-[#FAF7F9] hover:text-brand"
               onClick={() => setIsOpen(false)}
             >
               Gallery
             </a>
 
-            {/* Book Appointment */}
             <Link
               to="/appointment"
-              className="rounded-lg bg-brand px-5 py-3 text-center font-semibold text-white"
+              className="mt-2 rounded-lg bg-brand px-4 py-2.5 text-center font-semibold text-white transition hover:bg-brand-dark"
               onClick={() => setIsOpen(false)}
             >
               Book Appointment

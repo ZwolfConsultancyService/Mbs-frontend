@@ -1,3 +1,4 @@
+
 const PersonalisedCare = () => {
   const steps = [
     {
@@ -21,29 +22,32 @@ const PersonalisedCare = () => {
   ];
 
   return (
-    <section className="w-full overflow-hidden bg-[#FAF7F9] px-4 py-16 sm:px-6 md:py-24">
+    <section className="w-full overflow-hidden bg-[#FAF7F9] px-4 py-10 sm:px-6 sm:py-14 md:py-24">
       <div className="mx-auto w-full max-w-7xl">
 
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#AE2580]">
+
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#AE2580]">
             Our Process
           </p>
 
-          <h2 className="mt-4 text-3xl font-bold leading-tight text-[#252525] sm:text-4xl md:text-5xl">
+          <h2 className="mt-3 text-3xl font-bold leading-tight text-[#252525] sm:text-4xl md:mt-4 md:text-5xl">
             Personalised Care
             <br />
             <span className="text-[#AE2580]">Step by Step.</span>
           </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-gray-500 md:mt-6 md:text-base">
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-gray-500 md:mt-6 md:text-base md:leading-7">
             From understanding your condition to creating a personalised care
             plan, every step is designed around you.
           </p>
+
         </div>
 
+
         {/* PROCESS */}
-        <div className="relative mt-12 md:mt-20">
+        <div className="relative mt-8 md:mt-20">
 
           {/* Desktop Connecting Line */}
           <div className="absolute left-[18%] right-[18%] top-[50%] hidden h-px bg-[#AE2580]/20 md:block" />
@@ -51,9 +55,9 @@ const PersonalisedCare = () => {
           <div
             className="
               flex
-              gap-5
+              gap-4
               overflow-x-auto
-              pb-6
+              pb-4
               snap-x
               snap-mandatory
               scroll-smooth
@@ -68,20 +72,21 @@ const PersonalisedCare = () => {
               md:pb-0
             "
           >
+
             {steps.map((step, index) => (
               <div
                 key={step.number}
                 className="
                   relative
                   flex
-                  w-[82vw]
-                  min-w-[82vw]
+                  w-[78vw]
+                  min-w-[78vw]
                   shrink-0
                   snap-center
                   justify-center
 
-                  sm:w-[65vw]
-                  sm:min-w-[65vw]
+                  sm:w-[60vw]
+                  sm:min-w-[60vw]
 
                   md:w-auto
                   md:min-w-0
@@ -96,7 +101,7 @@ const PersonalisedCare = () => {
                     flex
                     aspect-square
                     w-full
-                    max-w-[330px]
+                    max-w-[300px]
                     flex-col
                     items-center
                     justify-center
@@ -104,15 +109,14 @@ const PersonalisedCare = () => {
                     border
                     border-[#AE2580]/15
                     bg-white
-                    px-8
+                    px-6
                     text-center
-
-                    shadow-[0_15px_50px_rgba(174,37,128,0.08)]
-
+                    shadow-[0_12px_40px_rgba(174,37,128,0.07)]
                     transition
                     duration-500
 
                     md:max-w-[360px]
+                    md:px-8
                     md:hover:-translate-y-3
                     md:hover:shadow-[0_25px_65px_rgba(174,37,128,0.14)]
                   "
@@ -137,38 +141,43 @@ const PersonalisedCare = () => {
                       relative
                       z-10
                       flex
-                      h-16
-                      w-16
+                      h-14
+                      w-14
                       items-center
                       justify-center
                       rounded-full
                       bg-[#AE2580]
-                      shadow-[0_8px_25px_rgba(174,37,128,0.25)]
+                      shadow-[0_7px_20px_rgba(174,37,128,0.22)]
+
+                      md:h-16
+                      md:w-16
                     "
                   >
-                    <span className="text-lg font-bold text-white">
+                    <span className="text-base font-bold text-white md:text-lg">
                       {step.number}
                     </span>
                   </div>
 
                   {/* Step */}
-                  <p className="relative z-10 mt-4 text-[10px] font-bold uppercase tracking-[0.22em] text-[#AE2580]">
+                  <p className="relative z-10 mt-3 text-[9px] font-bold uppercase tracking-[0.2em] text-[#AE2580] md:mt-4 md:text-[10px]">
                     Step {step.number}
                   </p>
 
                   {/* Title */}
-                  <h3 className="relative z-10 mt-2 max-w-[220px] text-xl font-bold leading-tight text-[#252525] md:text-2xl">
+                  <h3 className="relative z-10 mt-1.5 max-w-[210px] text-lg font-bold leading-tight text-[#252525] md:mt-2 md:text-2xl">
                     {step.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="relative z-10 mt-3 max-w-[235px] text-xs leading-6 text-gray-500 md:text-sm md:leading-7">
+                  <p className="relative z-10 mt-2 max-w-[220px] text-[11px] leading-5 text-gray-500 md:mt-3 md:max-w-[235px] md:text-sm md:leading-7">
                     {step.description}
                   </p>
 
                   {/* Bottom Dot */}
-                  <div className="relative z-10 mt-4 h-1.5 w-1.5 rounded-full bg-[#AE2580]" />
+                  <div className="relative z-10 mt-3 h-1.5 w-1.5 rounded-full bg-[#AE2580] md:mt-4" />
+
                 </div>
+
 
                 {/* Desktop Arrow */}
                 {index < steps.length - 1 && (
@@ -196,29 +205,36 @@ const PersonalisedCare = () => {
                     →
                   </div>
                 )}
+
               </div>
             ))}
+
           </div>
+
 
           {/* Mobile Indicators */}
-          <div className="mt-4 flex justify-center gap-2 md:hidden">
-            <span className="h-1.5 w-7 rounded-full bg-[#AE2580]" />
+          <div className="mt-3 flex justify-center gap-2 md:hidden">
+            <span className="h-1.5 w-6 rounded-full bg-[#AE2580]" />
             <span className="h-1.5 w-1.5 rounded-full bg-gray-300" />
             <span className="h-1.5 w-1.5 rounded-full bg-gray-300" />
           </div>
 
-          <p className="mt-3 text-center text-[11px] font-medium text-gray-400 md:hidden">
+          <p className="mt-2 text-center text-[10px] font-medium text-gray-400 md:hidden">
             Swipe to follow the process →
           </p>
+
         </div>
 
+
         {/* Bottom CTA */}
-        <div className="mx-auto mt-12 max-w-4xl rounded-full bg-[#252525] px-6 py-5 text-center md:mt-16 md:px-10 md:py-6">
-          <p className="text-sm font-medium text-white md:text-base">
+        <div className="mx-auto mt-8 max-w-4xl rounded-full bg-[#252525] px-5 py-4 text-center md:mt-16 md:px-10 md:py-6">
+
+          <p className="text-xs font-medium text-white sm:text-sm md:text-base">
             Understanding first.
             <span className="mx-2 text-[#D88BC0]">•</span>
             Personalised care next.
           </p>
+
         </div>
 
       </div>

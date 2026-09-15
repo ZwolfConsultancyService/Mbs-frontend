@@ -1,4 +1,12 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+
+import { useEffect } from "react";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -14,6 +22,18 @@ import Gallery from "./components/Gallery";
 import Treatments from "./pages/Treatments";
 import About from "./pages/About";
 import Appointment from "./pages/Appointment";
+import GalleryPage from "./pages/GalleryPage";
+
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 
 function Home() {
@@ -46,6 +66,8 @@ function Home() {
 function App() {
   return (
     <BrowserRouter>
+
+      <ScrollToTop />
 
       <Routes>
 
@@ -89,6 +111,19 @@ function App() {
             <>
               <Navbar />
               <Appointment />
+              <Footer />
+            </>
+          }
+        />
+
+
+        {/* ================= GALLERY ================= */}
+        <Route
+          path="/gallery"
+          element={
+            <>
+              <Navbar />
+              <GalleryPage />
               <Footer />
             </>
           }
