@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo/mbslogo.jpeg";
 
 const Navbar = () => {
@@ -43,6 +44,7 @@ const Navbar = () => {
             Treatments
           </a>
 
+          {/* Gallery - unchanged */}
           <a
             href="/gallery"
             className="font-medium text-dark transition hover:text-brand"
@@ -50,12 +52,13 @@ const Navbar = () => {
             Gallery
           </a>
 
-          <a
-            href="/appointment"
+          {/* Book Appointment */}
+          <Link
+            to="/appointment"
             className="rounded-lg bg-brand px-5 py-3 font-semibold text-white transition hover:bg-brand-dark"
           >
             Book Appointment
-          </a>
+          </Link>
 
         </div>
 
@@ -102,6 +105,7 @@ const Navbar = () => {
               Treatments
             </a>
 
+            {/* Gallery - unchanged */}
             <a
               href="/gallery"
               className="font-medium text-dark"
@@ -110,13 +114,14 @@ const Navbar = () => {
               Gallery
             </a>
 
-            <a
-              href="/appointment"
+            {/* Book Appointment */}
+            <Link
+              to="/appointment"
               className="rounded-lg bg-brand px-5 py-3 text-center font-semibold text-white"
               onClick={() => setIsOpen(false)}
             >
               Book Appointment
-            </a>
+            </Link>
 
           </div>
 
