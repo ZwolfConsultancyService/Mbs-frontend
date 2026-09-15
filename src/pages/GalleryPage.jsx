@@ -1,3 +1,5 @@
+import { Helmet } from "react-helmet-async";
+
 import image1 from "../assets/gallery/image1.jpeg";
 import image2 from "../assets/gallery/image2.jpeg";
 import image3 from "../assets/gallery/image3.jpeg";
@@ -22,47 +24,60 @@ const GalleryPage = () => {
   ];
 
   return (
-    <section className="bg-white px-6 py-24">
-      <div className="mx-auto max-w-7xl">
+    <>
+      <Helmet>
+        <title>
+          Gallery | MBS Health Solutions & Chiropractic
+        </title>
 
-        {/* Heading */}
-        <div className="mx-auto max-w-3xl text-center">
+        <meta
+          name="description"
+          content="Explore the MBS Health Solutions & Chiropractic gallery featuring our clinic, care environment and personalised treatment experience."
+        />
+      </Helmet>
 
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#AE2580]">
-            Gallery
-          </p>
+      <section className="bg-white px-6 py-24">
+        <div className="mx-auto max-w-7xl">
 
-          <h1 className="mt-4 text-4xl font-bold text-[#252525] md:text-6xl">
-            Our <span className="text-[#AE2580]">Gallery</span>
-          </h1>
+          {/* Heading */}
+          <div className="mx-auto max-w-3xl text-center">
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-gray-600 md:text-lg">
-            Explore our clinic, care environment and personalised treatment
-            experience.
-          </p>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#AE2580]">
+              Gallery
+            </p>
+
+            <h1 className="mt-4 text-4xl font-bold text-[#252525] md:text-6xl">
+              Our <span className="text-[#AE2580]">Gallery</span>
+            </h1>
+
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-gray-600 md:text-lg">
+              Explore our clinic, care environment and personalised treatment
+              experience.
+            </p>
+
+          </div>
+
+          {/* 9 Images */}
+          <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className="group h-80 overflow-hidden rounded-3xl bg-[#F3EEF1] shadow-sm"
+              >
+                <img
+                  src={image}
+                  alt={`MBS Mind Body Soul Gallery ${index + 1}`}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
+            ))}
+
+          </div>
 
         </div>
-
-        {/* 9 Images */}
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className="group h-80 overflow-hidden rounded-3xl bg-[#F3EEF1] shadow-sm"
-            >
-              <img
-                src={image}
-                alt={`MBS Mind Body Soul Gallery ${index + 1}`}
-                className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-              />
-            </div>
-          ))}
-
-        </div>
-
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

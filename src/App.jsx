@@ -1,4 +1,3 @@
-
 import {
   BrowserRouter,
   Routes,
@@ -7,6 +6,7 @@ import {
 } from "react-router-dom";
 
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -40,6 +40,17 @@ function ScrollToTop() {
 function Home() {
   return (
     <>
+      <Helmet>
+        <title>
+          MBS Health Solutions & Chiropractic | Holistic Health Care
+        </title>
+
+        <meta
+          name="description"
+          content="MBS Health Solutions & Chiropractic provides personalised holistic health and therapy care with Dr. Pawan Srivastava."
+        />
+      </Helmet>
+
       <Navbar />
 
       <Hero />

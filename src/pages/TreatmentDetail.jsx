@@ -1,5 +1,7 @@
+
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const treatmentData = {
   sciatica: {
@@ -385,555 +387,583 @@ function TreatmentDetail() {
     );
   }
 
+  const seoTitle = `${treatment.title} Treatment | MBS Health Solutions & Chiropractic`;
+
+  const seoDescription = `${treatment.title} care and holistic wellness support at MBS Health Solutions & Chiropractic with Dr. Pawan Srivastava. Personalized care based on individual symptoms and needs.`;
+
   return (
-    <main className="bg-[#FAF7F9] text-[#252525] overflow-hidden">
+    <>
+      <Helmet>
+        <title>{seoTitle}</title>
 
-      {/* ================= HERO ================= */}
-      <section className="relative overflow-hidden bg-white">
-        <div className="absolute -top-32 -right-32 w-64 sm:w-80 h-64 sm:h-80 rounded-full bg-[#AE2580]/5" />
+        <meta
+          name="description"
+          content={seoDescription}
+        />
 
-        <div className="absolute top-40 -left-40 w-64 sm:w-72 h-64 sm:h-72 rounded-full bg-[#AE2580]/5" />
+        <meta
+          property="og:title"
+          content={seoTitle}
+        />
 
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-7 sm:pt-10 md:pt-14 pb-14 sm:pb-20 md:pb-28">
+        <meta
+          property="og:description"
+          content={seoDescription}
+        />
 
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-gray-500 mb-10 sm:mb-14 overflow-x-auto whitespace-nowrap">
-            <Link
-              to="/"
-              className="hover:text-[#AE2580] transition"
-            >
-              Home
-            </Link>
+        <meta
+          property="og:type"
+          content="website"
+        />
+      </Helmet>
 
-            <span>/</span>
+      <main className="bg-[#FAF7F9] text-[#252525] overflow-hidden">
 
-            <Link
-              to="/treatments"
-              className="hover:text-[#AE2580] transition"
-            >
-              Treatments
-            </Link>
+        {/* ================= HERO ================= */}
+        <section className="relative overflow-hidden bg-white">
+          <div className="absolute -top-32 -right-32 w-64 sm:w-80 h-64 sm:h-80 rounded-full bg-[#AE2580]/5" />
 
-            <span>/</span>
+          <div className="absolute top-40 -left-40 w-64 sm:w-72 h-64 sm:h-72 rounded-full bg-[#AE2580]/5" />
 
-            <span className="text-[#252525] font-medium">
-              {treatment.title}
-            </span>
-          </div>
+          <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-7 sm:pt-10 md:pt-14 pb-14 sm:pb-20 md:pb-28">
 
-          <div className="grid lg:grid-cols-[1fr_360px] gap-10 lg:gap-20 items-end">
+            <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-gray-500 mb-10 sm:mb-14 overflow-x-auto whitespace-nowrap">
+              <Link
+                to="/"
+                className="hover:text-[#AE2580] transition"
+              >
+                Home
+              </Link>
 
-            <div>
-              <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-7">
-                <span className="text-[#AE2580] font-bold text-sm tracking-[0.25em]">
-                  {treatment.number}
-                </span>
+              <span>/</span>
 
-                <span className="h-px w-9 sm:w-14 bg-[#AE2580]" />
+              <Link
+                to="/treatments"
+                className="hover:text-[#AE2580] transition"
+              >
+                Treatments
+              </Link>
 
-                <span className="text-gray-500 text-[10px] sm:text-sm uppercase tracking-[0.14em] sm:tracking-[0.18em]">
-                  MBS Health Solutions
-                </span>
-              </div>
+              <span>/</span>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.98] md:leading-[0.95] tracking-tight max-w-4xl">
+              <span className="text-[#252525] font-medium">
                 {treatment.title}
-              </h1>
-
-              <p className="mt-5 sm:mt-7 text-lg sm:text-xl md:text-2xl text-gray-600 max-w-2xl leading-7 md:leading-relaxed">
-                {treatment.subtitle}
-              </p>
-
-              <p className="mt-5 sm:mt-7 text-gray-600 max-w-2xl leading-7 md:leading-8 text-base md:text-lg">
-                {treatment.intro}
-              </p>
-
-              <div className="mt-8 sm:mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Link
-                  to="/appointment"
-                  className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-[#AE2580] px-6 sm:px-7 py-3.5 text-white font-semibold hover:bg-[#8f1e69] transition"
-                >
-                  Book an Appointment
-                </Link>
-
-                <a
-                  href="tel:+918076569626"
-                  className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-6 sm:px-7 py-3.5 font-semibold text-[#252525] hover:border-[#AE2580] hover:text-[#AE2580] transition"
-                >
-                  Call Clinic
-                </a>
-              </div>
+              </span>
             </div>
 
-            {/* Decorative visual */}
-            <div className="hidden lg:flex justify-center">
-              <div className="relative w-72 h-72">
-                <div className="absolute inset-0 rounded-full border border-[#AE2580]/20" />
+            <div className="grid lg:grid-cols-[1fr_360px] gap-10 lg:gap-20 items-end">
 
-                <div className="absolute inset-7 rounded-full border border-[#AE2580]/25" />
-
-                <div className="absolute inset-14 rounded-full bg-[#AE2580] flex items-center justify-center">
-                  <span className="text-white text-7xl font-bold">
+              <div>
+                <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-7">
+                  <span className="text-[#AE2580] font-bold text-sm tracking-[0.25em]">
                     {treatment.number}
                   </span>
+
+                  <span className="h-px w-9 sm:w-14 bg-[#AE2580]" />
+
+                  <span className="text-gray-500 text-[10px] sm:text-sm uppercase tracking-[0.14em] sm:tracking-[0.18em]">
+                    MBS Health Solutions
+                  </span>
                 </div>
 
-                <div className="absolute top-5 right-8 w-4 h-4 rounded-full bg-[#AE2580]" />
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.98] md:leading-[0.95] tracking-tight max-w-4xl">
+                  {treatment.title}
+                </h1>
 
-                <div className="absolute bottom-10 left-3 w-3 h-3 rounded-full bg-[#AE2580]/50" />
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ================= TRUST STRIP ================= */}
-      <section className="border-y border-[#AE2580]/10 bg-[#FAF7F9]">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-7 sm:py-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0">
-
-            <div className="text-center sm:text-left">
-              <p className="text-2xl font-bold text-[#252525]">
-                32 Years
-              </p>
-
-              <p className="text-sm text-gray-500 mt-1">
-                Experience in holistic health
-              </p>
-            </div>
-
-            <div className="text-center sm:text-left sm:border-l sm:border-gray-200 sm:pl-8">
-              <p className="text-2xl font-bold text-[#252525]">
-                Thousands of Patients
-              </p>
-
-              <p className="text-sm text-gray-500 mt-1">
-                Personalized care approach
-              </p>
-            </div>
-
-            <div className="text-center sm:text-left sm:border-l sm:border-gray-200 sm:pl-8">
-              <p className="text-2xl font-bold text-[#252525]">
-                Holistic Care
-              </p>
-
-              <p className="text-sm text-gray-500 mt-1">
-                Mind • Body • Soul
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ================= UNDERSTANDING ================= */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-28">
-
-          <div className="grid lg:grid-cols-[280px_1fr] gap-8 md:gap-10 lg:gap-20">
-
-            <div>
-              <p className="text-[#AE2580] text-xs sm:text-sm font-bold uppercase tracking-[0.2em]">
-                Understanding
-              </p>
-
-              <h2 className="text-3xl sm:text-4xl font-bold mt-3 leading-tight">
-                What is {treatment.title}?
-              </h2>
-            </div>
-
-            <div>
-              <p className="text-gray-600 text-base sm:text-lg md:text-xl leading-7 sm:leading-8 max-w-3xl">
-                {treatment.whatIs}
-              </p>
-
-              <div className="mt-8 sm:mt-10 pt-7 sm:pt-8 border-t border-gray-200">
-
-                <p className="text-xs sm:text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
-                  You may also want to explore
+                <p className="mt-5 sm:mt-7 text-lg sm:text-xl md:text-2xl text-gray-600 max-w-2xl leading-7 md:leading-relaxed">
+                  {treatment.subtitle}
                 </p>
 
-                <div className="flex flex-wrap gap-2.5 sm:gap-3">
-                  {treatment.related.map((item) => (
-                    <Link
-                      key={item}
-                      to={`/treatments/${item}`}
-                      className="rounded-full border border-gray-200 bg-[#FAF7F9] px-4 sm:px-5 py-2.5 text-sm font-medium hover:border-[#AE2580] hover:text-[#AE2580] transition"
-                    >
-                      {treatmentNames[item]}
-                    </Link>
-                  ))}
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ================= SYMPTOMS ================= */}
-      <section className="bg-[#FAF7F9]">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-28">
-
-          <div className="max-w-2xl mb-10 sm:mb-14">
-            <p className="text-[#AE2580] text-xs sm:text-sm font-bold uppercase tracking-[0.2em]">
-              Common Concerns
-            </p>
-
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 leading-tight">
-              Symptoms people may experience
-            </h2>
-
-            <p className="text-gray-600 mt-4 sm:mt-5 leading-7">
-              Symptoms can vary from person to person. Understanding the
-              pattern and severity of symptoms is an important part of
-              deciding what kind of professional evaluation may be appropriate.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 rounded-2xl sm:rounded-3xl overflow-hidden border border-gray-200">
-
-            {treatment.symptoms.map((symptom, index) => (
-              <div
-                key={symptom}
-                className="bg-white p-6 sm:p-7 md:p-8 min-h-[150px] sm:min-h-[175px] md:min-h-[190px] hover:bg-[#AE2580] group transition duration-300"
-              >
-                <div className="flex items-start justify-between gap-4">
-
-                  <span className="text-sm font-bold text-[#AE2580] group-hover:text-white/70 transition">
-                    0{index + 1}
-                  </span>
-
-                  <span className="text-xl text-[#AE2580] group-hover:text-white transition">
-                    +
-                  </span>
-
-                </div>
-
-                <h3 className="mt-10 sm:mt-12 text-lg md:text-xl font-semibold group-hover:text-white transition">
-                  {symptom}
-                </h3>
-              </div>
-            ))}
-
-          </div>
-        </div>
-      </section>
-
-      {/* ================= APPROACH ================= */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-28">
-
-          <div className="grid lg:grid-cols-[0.75fr_1.25fr] gap-10 sm:gap-12 lg:gap-24">
-
-            <div>
-              <p className="text-[#AE2580] text-xs sm:text-sm font-bold uppercase tracking-[0.2em]">
-                Our Approach
-              </p>
-
-              <h2 className="text-4xl sm:text-5xl font-bold mt-3 leading-[1.05]">
-                Understand.
-                <br />
-                Personalise.
-                <br />
-                Support.
-              </h2>
-
-              <p className="text-gray-500 mt-5 sm:mt-6 leading-7 max-w-sm">
-                Every individual can have different symptoms, lifestyle
-                factors and functional concerns. Care is therefore approached
-                on an individual basis.
-              </p>
-            </div>
-
-            <div>
-
-              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10 sm:mb-12">
-
-                <div>
-                  <span className="text-[#AE2580] font-bold text-sm">
-                    01
-                  </span>
-
-                  <h3 className="font-bold text-xl mt-3">
-                    Understand
-                  </h3>
-
-                  <p className="text-gray-500 mt-3 leading-6">
-                    Understand symptoms, concerns and everyday challenges.
-                  </p>
-                </div>
-
-                <div>
-                  <span className="text-[#AE2580] font-bold text-sm">
-                    02
-                  </span>
-
-                  <h3 className="font-bold text-xl mt-3">
-                    Personalise
-                  </h3>
-
-                  <p className="text-gray-500 mt-3 leading-6">
-                    Consider an approach according to individual needs.
-                  </p>
-                </div>
-
-                <div>
-                  <span className="text-[#AE2580] font-bold text-sm">
-                    03
-                  </span>
-
-                  <h3 className="font-bold text-xl mt-3">
-                    Support
-                  </h3>
-
-                  <p className="text-gray-500 mt-3 leading-6">
-                    Focus on movement, posture and holistic wellness where
-                    appropriate.
-                  </p>
-                </div>
-
-              </div>
-
-              <div className="border-t border-gray-200 pt-8 sm:pt-9">
-                <p className="text-gray-700 text-base sm:text-lg leading-7 sm:leading-8">
-                  {treatment.approach}
+                <p className="mt-5 sm:mt-7 text-gray-600 max-w-2xl leading-7 md:leading-8 text-base md:text-lg">
+                  {treatment.intro}
                 </p>
-              </div>
 
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ================= PRACTITIONER ================= */}
-      <section className="bg-[#252525] text-white">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-14 sm:py-16 md:py-20">
-
-          <div className="grid md:grid-cols-[1fr_auto] gap-8 sm:gap-10 items-center">
-
-            <div>
-              <p className="text-[#AE2580] font-semibold text-xs sm:text-sm uppercase tracking-[0.2em]">
-                Your Practitioner
-              </p>
-
-              <h2 className="text-3xl sm:text-4xl font-bold mt-3">
-                Dr. Pawan Srivastava
-              </h2>
-
-              <p className="text-gray-300 mt-4 max-w-2xl leading-7">
-                MD. Chiro. • MD. Acu. • Diabetes Educator • PLR Therapist
-              </p>
-
-              <p className="text-gray-400 mt-2">
-                32 Years of Experience in Holistic Health & Therapy
-              </p>
-            </div>
-
-            <Link
-              to="/about"
-              className="w-full md:w-auto inline-flex items-center justify-center rounded-full border border-white/20 px-6 sm:px-7 py-3.5 font-semibold hover:bg-white hover:text-[#252525] transition"
-            >
-              Know More About Dr. Pawan
-            </Link>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ================= FAQ ================= */}
-      <section className="bg-[#FAF7F9]">
-        <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-28">
-
-          <div className="text-center mb-10 sm:mb-12">
-            <p className="text-[#AE2580] text-xs sm:text-sm font-bold uppercase tracking-[0.2em]">
-              Frequently Asked Questions
-            </p>
-
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 leading-tight">
-              Questions about {treatment.title}
-            </h2>
-          </div>
-
-          <div className="space-y-3">
-
-            {treatment.faq.map(([question, answer], index) => {
-              const isOpen = openFaq === index;
-
-              return (
-                <div
-                  key={question}
-                  className="bg-white border border-gray-200 rounded-2xl overflow-hidden"
-                >
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setOpenFaq(isOpen ? null : index)
-                    }
-                    className="w-full px-5 sm:px-6 py-5 text-left flex items-center justify-between gap-4"
+                <div className="mt-8 sm:mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <Link
+                    to="/appointment"
+                    className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-[#AE2580] px-6 sm:px-7 py-3.5 text-white font-semibold hover:bg-[#8f1e69] transition"
                   >
-                    <span className="font-semibold text-base md:text-lg leading-6">
-                      {question}
-                    </span>
+                    Book an Appointment
+                  </Link>
 
-                    <span
-                      className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-xl transition ${
-                        isOpen
-                          ? "bg-[#AE2580] text-white"
-                          : "bg-[#FAF7F9] text-[#AE2580]"
-                      }`}
-                    >
-                      {isOpen ? "−" : "+"}
-                    </span>
-                  </button>
-
-                  {isOpen && (
-                    <div className="px-5 sm:px-6 pb-6">
-                      <div className="border-t border-gray-100 pt-5">
-                        <p className="text-gray-600 leading-7">
-                          {answer}
-                        </p>
-                      </div>
-                    </div>
-                  )}
+                  <a
+                    href="tel:+918076569626"
+                    className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-6 sm:px-7 py-3.5 font-semibold text-[#252525] hover:border-[#AE2580] hover:text-[#AE2580] transition"
+                  >
+                    Call Clinic
+                  </a>
                 </div>
-              );
-            })}
+              </div>
 
-          </div>
-        </div>
-      </section>
+              <div className="hidden lg:flex justify-center">
+                <div className="relative w-72 h-72">
+                  <div className="absolute inset-0 rounded-full border border-[#AE2580]/20" />
 
-      {/* ================= RELATED TREATMENTS ================= */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24">
+                  <div className="absolute inset-7 rounded-full border border-[#AE2580]/25" />
 
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 sm:gap-6 mb-8 sm:mb-10">
+                  <div className="absolute inset-14 rounded-full bg-[#AE2580] flex items-center justify-center">
+                    <span className="text-white text-7xl font-bold">
+                      {treatment.number}
+                    </span>
+                  </div>
 
-            <div>
-              <p className="text-[#AE2580] text-xs sm:text-sm font-bold uppercase tracking-[0.2em]">
-                Explore More
-              </p>
+                  <div className="absolute top-5 right-8 w-4 h-4 rounded-full bg-[#AE2580]" />
 
-              <h2 className="text-3xl sm:text-4xl font-bold mt-3">
-                Related Treatments
-              </h2>
+                  <div className="absolute bottom-10 left-3 w-3 h-3 rounded-full bg-[#AE2580]/50" />
+                </div>
+              </div>
+
             </div>
-
-            <Link
-              to="/treatments"
-              className="text-[#AE2580] font-semibold hover:underline"
-            >
-              View all treatments →
-            </Link>
-
           </div>
+        </section>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
+        {/* ================= TRUST STRIP ================= */}
+        <section className="border-y border-[#AE2580]/10 bg-[#FAF7F9]">
+          <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-7 sm:py-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0">
 
-            {treatment.related.map((item, index) => (
-              <Link
-                key={item}
-                to={`/treatments/${item}`}
-                className="group rounded-2xl sm:rounded-3xl border border-gray-200 p-6 sm:p-7 hover:border-[#AE2580] hover:shadow-lg transition duration-300"
-              >
-
-                <div className="flex items-center justify-between">
-
-                  <span className="text-sm font-bold text-[#AE2580]">
-                    0{index + 1}
-                  </span>
-
-                  <span className="text-xl group-hover:translate-x-1 transition">
-                    →
-                  </span>
-
-                </div>
-
-                <h3 className="text-xl font-bold mt-10 sm:mt-12">
-                  {treatmentNames[item]}
-                </h3>
-
-                <p className="text-gray-500 text-sm mt-3 leading-6">
-                  Explore this treatment and learn more about the condition.
+              <div className="text-center sm:text-left">
+                <p className="text-2xl font-bold text-[#252525]">
+                  32 Years
                 </p>
 
-              </Link>
-            ))}
+                <p className="text-sm text-gray-500 mt-1">
+                  Experience in holistic health
+                </p>
+              </div>
 
+              <div className="text-center sm:text-left sm:border-l sm:border-gray-200 sm:pl-8">
+                <p className="text-2xl font-bold text-[#252525]">
+                  Thousands of Patients
+                </p>
+
+                <p className="text-sm text-gray-500 mt-1">
+                  Personalized care approach
+                </p>
+              </div>
+
+              <div className="text-center sm:text-left sm:border-l sm:border-gray-200 sm:pl-8">
+                <p className="text-2xl font-bold text-[#252525]">
+                  Holistic Care
+                </p>
+
+                <p className="text-sm text-gray-500 mt-1">
+                  Mind • Body • Soul
+                </p>
+              </div>
+
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ================= DISCLAIMER ================= */}
-      <section className="bg-[#FAF7F9]">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-7 sm:py-8">
+        {/* ================= UNDERSTANDING ================= */}
+        <section className="bg-white">
+          <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-28">
 
-          <p className="text-xs sm:text-sm text-gray-500 leading-6 max-w-5xl">
-            <strong className="text-gray-600">
-              Important:
-            </strong>{" "}
-            The information on this page is for general educational purposes
-            and should not replace professional medical diagnosis or treatment.
-            Individual results and appropriate care may vary.
-          </p>
+            <div className="grid lg:grid-cols-[280px_1fr] gap-8 md:gap-10 lg:gap-20">
 
-        </div>
-      </section>
+              <div>
+                <p className="text-[#AE2580] text-xs sm:text-sm font-bold uppercase tracking-[0.2em]">
+                  Understanding
+                </p>
 
-      {/* ================= FINAL CTA ================= */}
-      <section className="bg-[#FAF7F9] px-5 sm:px-6 lg:px-8 pb-16 sm:pb-20 md:pb-28">
+                <h2 className="text-3xl sm:text-4xl font-bold mt-3 leading-tight">
+                  What is {treatment.title}?
+                </h2>
+              </div>
 
-        <div className="max-w-7xl mx-auto">
+              <div>
+                <p className="text-gray-600 text-base sm:text-lg md:text-xl leading-7 sm:leading-8 max-w-3xl">
+                  {treatment.whatIs}
+                </p>
 
-          <div className="relative overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] bg-[#AE2580] px-6 sm:px-7 md:px-14 py-10 sm:py-14 md:py-16">
+                <div className="mt-8 sm:mt-10 pt-7 sm:pt-8 border-t border-gray-200">
 
-            <div className="absolute -right-20 -top-20 w-56 sm:w-64 h-56 sm:h-64 rounded-full border border-white/10" />
+                  <p className="text-xs sm:text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
+                    You may also want to explore
+                  </p>
 
-            <div className="absolute -right-5 -bottom-32 w-64 sm:w-72 h-64 sm:h-72 rounded-full border border-white/10" />
+                  <div className="flex flex-wrap gap-2.5 sm:gap-3">
+                    {treatment.related.map((item) => (
+                      <Link
+                        key={item}
+                        to={`/treatments/${item}`}
+                        className="rounded-full border border-gray-200 bg-[#FAF7F9] px-4 sm:px-5 py-2.5 text-sm font-medium hover:border-[#AE2580] hover:text-[#AE2580] transition"
+                      >
+                        {treatmentNames[item]}
+                      </Link>
+                    ))}
+                  </div>
 
-            <div className="relative max-w-3xl">
+                </div>
+              </div>
 
-              <p className="text-white/70 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em]">
-                MBS Health Solutions & Chiropractic
+            </div>
+          </div>
+        </section>
+
+        {/* ================= SYMPTOMS ================= */}
+        <section className="bg-[#FAF7F9]">
+          <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-28">
+
+            <div className="max-w-2xl mb-10 sm:mb-14">
+              <p className="text-[#AE2580] text-xs sm:text-sm font-bold uppercase tracking-[0.2em]">
+                Common Concerns
               </p>
 
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-4 leading-tight">
-                Looking for personalised support?
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 leading-tight">
+                Symptoms people may experience
               </h2>
 
-              <p className="text-white/80 mt-5 text-base sm:text-lg leading-7 max-w-2xl">
-                Discuss your symptoms and concerns with our team and understand
-                what type of care may be appropriate for you.
+              <p className="text-gray-600 mt-4 sm:mt-5 leading-7">
+                Symptoms can vary from person to person. Understanding the
+                pattern and severity of symptoms is an important part of
+                deciding what kind of professional evaluation may be appropriate.
               </p>
+            </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 rounded-2xl sm:rounded-3xl overflow-hidden border border-gray-200">
 
-                <Link
-                  to="/appointment"
-                  className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-white px-6 sm:px-7 py-3.5 text-[#AE2580] font-bold hover:bg-gray-100 transition"
+              {treatment.symptoms.map((symptom, index) => (
+                <div
+                  key={symptom}
+                  className="bg-white p-6 sm:p-7 md:p-8 min-h-[150px] sm:min-h-[175px] md:min-h-[190px] hover:bg-[#AE2580] group transition duration-300"
                 >
-                  Book Appointment
-                </Link>
+                  <div className="flex items-start justify-between gap-4">
 
-                <a
-                  href="tel:+918076569626"
-                  className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-white/30 px-6 sm:px-7 py-3.5 text-white font-semibold hover:bg-white/10 transition"
-                >
-                  +91 80765 69626
-                </a>
+                    <span className="text-sm font-bold text-[#AE2580] group-hover:text-white/70 transition">
+                      0{index + 1}
+                    </span>
+
+                    <span className="text-xl text-[#AE2580] group-hover:text-white transition">
+                      +
+                    </span>
+
+                  </div>
+
+                  <h3 className="mt-10 sm:mt-12 text-lg md:text-xl font-semibold group-hover:text-white transition">
+                    {symptom}
+                  </h3>
+                </div>
+              ))}
+
+            </div>
+          </div>
+        </section>
+
+        {/* ================= APPROACH ================= */}
+        <section className="bg-white">
+          <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-28">
+
+            <div className="grid lg:grid-cols-[0.75fr_1.25fr] gap-10 sm:gap-12 lg:gap-24">
+
+              <div>
+                <p className="text-[#AE2580] text-xs sm:text-sm font-bold uppercase tracking-[0.2em]">
+                  Our Approach
+                </p>
+
+                <h2 className="text-4xl sm:text-5xl font-bold mt-3 leading-[1.05]">
+                  Understand.
+                  <br />
+                  Personalise.
+                  <br />
+                  Support.
+                </h2>
+
+                <p className="text-gray-500 mt-5 sm:mt-6 leading-7 max-w-sm">
+                  Every individual can have different symptoms, lifestyle
+                  factors and functional concerns. Care is therefore approached
+                  on an individual basis.
+                </p>
+              </div>
+
+              <div>
+
+                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10 sm:mb-12">
+
+                  <div>
+                    <span className="text-[#AE2580] font-bold text-sm">
+                      01
+                    </span>
+
+                    <h3 className="font-bold text-xl mt-3">
+                      Understand
+                    </h3>
+
+                    <p className="text-gray-500 mt-3 leading-6">
+                      Understand symptoms, concerns and everyday challenges.
+                    </p>
+                  </div>
+
+                  <div>
+                    <span className="text-[#AE2580] font-bold text-sm">
+                      02
+                    </span>
+
+                    <h3 className="font-bold text-xl mt-3">
+                      Personalise
+                    </h3>
+
+                    <p className="text-gray-500 mt-3 leading-6">
+                      Consider an approach according to individual needs.
+                    </p>
+                  </div>
+
+                  <div>
+                    <span className="text-[#AE2580] font-bold text-sm">
+                      03
+                    </span>
+
+                    <h3 className="font-bold text-xl mt-3">
+                      Support
+                    </h3>
+
+                    <p className="text-gray-500 mt-3 leading-6">
+                      Focus on movement, posture and holistic wellness where
+                      appropriate.
+                    </p>
+                  </div>
+
+                </div>
+
+                <div className="border-t border-gray-200 pt-8 sm:pt-9">
+                  <p className="text-gray-700 text-base sm:text-lg leading-7 sm:leading-8">
+                    {treatment.approach}
+                  </p>
+                </div>
 
               </div>
 
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-    </main>
+        {/* ================= PRACTITIONER ================= */}
+        <section className="bg-[#252525] text-white">
+          <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-14 sm:py-16 md:py-20">
+
+            <div className="grid md:grid-cols-[1fr_auto] gap-8 sm:gap-10 items-center">
+
+              <div>
+                <p className="text-[#AE2580] font-semibold text-xs sm:text-sm uppercase tracking-[0.2em]">
+                  Your Practitioner
+                </p>
+
+                <h2 className="text-3xl sm:text-4xl font-bold mt-3">
+                  Dr. Pawan Srivastava
+                </h2>
+
+                <p className="text-gray-300 mt-4 max-w-2xl leading-7">
+                  MD. Chiro. • MD. Acu. • Diabetes Educator • PLR Therapist
+                </p>
+
+                <p className="text-gray-400 mt-2">
+                  32 Years of Experience in Holistic Health & Therapy
+                </p>
+              </div>
+
+              <Link
+                to="/about"
+                className="w-full md:w-auto inline-flex items-center justify-center rounded-full border border-white/20 px-6 sm:px-7 py-3.5 font-semibold hover:bg-white hover:text-[#252525] transition"
+              >
+                Know More About Dr. Pawan
+              </Link>
+
+            </div>
+          </div>
+        </section>
+
+        {/* ================= FAQ ================= */}
+        <section className="bg-[#FAF7F9]">
+          <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-28">
+
+            <div className="text-center mb-10 sm:mb-12">
+              <p className="text-[#AE2580] text-xs sm:text-sm font-bold uppercase tracking-[0.2em]">
+                Frequently Asked Questions
+              </p>
+
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 leading-tight">
+                Questions about {treatment.title}
+              </h2>
+            </div>
+
+            <div className="space-y-3">
+
+              {treatment.faq.map(([question, answer], index) => {
+                const isOpen = openFaq === index;
+
+                return (
+                  <div
+                    key={question}
+                    className="bg-white border border-gray-200 rounded-2xl overflow-hidden"
+                  >
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setOpenFaq(isOpen ? null : index)
+                      }
+                      className="w-full px-5 sm:px-6 py-5 text-left flex items-center justify-between gap-4"
+                    >
+                      <span className="font-semibold text-base md:text-lg leading-6">
+                        {question}
+                      </span>
+
+                      <span
+                        className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-xl transition ${
+                          isOpen
+                            ? "bg-[#AE2580] text-white"
+                            : "bg-[#FAF7F9] text-[#AE2580]"
+                        }`}
+                      >
+                        {isOpen ? "−" : "+"}
+                      </span>
+                    </button>
+
+                    {isOpen && (
+                      <div className="px-5 sm:px-6 pb-6">
+                        <div className="border-t border-gray-100 pt-5">
+                          <p className="text-gray-600 leading-7">
+                            {answer}
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+
+            </div>
+          </div>
+        </section>
+
+        {/* ================= RELATED TREATMENTS ================= */}
+        <section className="bg-white">
+          <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24">
+
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 sm:gap-6 mb-8 sm:mb-10">
+
+              <div>
+                <p className="text-[#AE2580] text-xs sm:text-sm font-bold uppercase tracking-[0.2em]">
+                  Explore More
+                </p>
+
+                <h2 className="text-3xl sm:text-4xl font-bold mt-3">
+                  Related Treatments
+                </h2>
+              </div>
+
+              <Link
+                to="/treatments"
+                className="text-[#AE2580] font-semibold hover:underline"
+              >
+                View all treatments →
+              </Link>
+
+            </div>
+
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
+
+              {treatment.related.map((item, index) => (
+                <Link
+                  key={item}
+                  to={`/treatments/${item}`}
+                  className="group rounded-2xl sm:rounded-3xl border border-gray-200 p-6 sm:p-7 hover:border-[#AE2580] hover:shadow-lg transition duration-300"
+                >
+
+                  <div className="flex items-center justify-between">
+
+                    <span className="text-sm font-bold text-[#AE2580]">
+                      0{index + 1}
+                    </span>
+
+                    <span className="text-xl group-hover:translate-x-1 transition">
+                      →
+                    </span>
+
+                  </div>
+
+                  <h3 className="text-xl font-bold mt-10 sm:mt-12">
+                    {treatmentNames[item]}
+                  </h3>
+
+                  <p className="text-gray-500 text-sm mt-3 leading-6">
+                    Explore this treatment and learn more about the condition.
+                  </p>
+
+                </Link>
+              ))}
+
+            </div>
+          </div>
+        </section>
+
+        {/* ================= DISCLAIMER ================= */}
+        <section className="bg-[#FAF7F9]">
+          <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-7 sm:py-8">
+
+            <p className="text-xs sm:text-sm text-gray-500 leading-6 max-w-5xl">
+              <strong className="text-gray-600">
+                Important:
+              </strong>{" "}
+              The information on this page is for general educational purposes
+              and should not replace professional medical diagnosis or treatment.
+              Individual results and appropriate care may vary.
+            </p>
+
+          </div>
+        </section>
+
+        {/* ================= FINAL CTA ================= */}
+        <section className="bg-[#FAF7F9] px-5 sm:px-6 lg:px-8 pb-16 sm:pb-20 md:pb-28">
+
+          <div className="max-w-7xl mx-auto">
+
+            <div className="relative overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] bg-[#AE2580] px-6 sm:px-7 md:px-14 py-10 sm:py-14 md:py-16">
+
+              <div className="absolute -right-20 -top-20 w-56 sm:w-64 h-56 sm:h-64 rounded-full border border-white/10" />
+
+              <div className="absolute -right-5 -bottom-32 w-64 sm:w-72 h-64 sm:h-72 rounded-full border border-white/10" />
+
+              <div className="relative max-w-3xl">
+
+                <p className="text-white/70 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em]">
+                  MBS Health Solutions & Chiropractic
+                </p>
+
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-4 leading-tight">
+                  Looking for personalised support?
+                </h2>
+
+                <p className="text-white/80 mt-5 text-base sm:text-lg leading-7 max-w-2xl">
+                  Discuss your symptoms and concerns with our team and understand
+                  what type of care may be appropriate for you.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8">
+
+                  <Link
+                    to="/appointment"
+                    className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-white px-6 sm:px-7 py-3.5 text-[#AE2580] font-bold hover:bg-gray-100 transition"
+                  >
+                    Book Appointment
+                  </Link>
+
+                  <a
+                    href="tel:+918076569626"
+                    className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-white/30 px-6 sm:px-7 py-3.5 text-white font-semibold hover:bg-white/10 transition"
+                  >
+                    +91 80765 69626
+                  </a>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </>
   );
 }
 

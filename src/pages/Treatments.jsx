@@ -1,5 +1,5 @@
-
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Treatments = () => {
   const treatments = [
@@ -76,96 +76,109 @@ const Treatments = () => {
   ];
 
   return (
-    <section className="bg-white px-6 py-24">
-      <div className="mx-auto max-w-7xl">
+    <>
+      <Helmet>
+        <title>
+          Treatments | Chiropractic & Holistic Care | MBS Health Solutions
+        </title>
 
-        {/* Heading */}
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#AE2580]">
-            Our Treatments
-          </p>
+        <meta
+          name="description"
+          content="Explore personalised chiropractic and holistic treatment options for sciatica, slip disc, back pain, knee pain, cervical problems and more at MBS Health Solutions."
+        />
+      </Helmet>
 
-          <h1 className="mt-4 text-4xl font-bold leading-tight text-[#252525] md:text-6xl">
-            Treatment For Your
-            <br />
-            <span className="text-[#AE2580]">
-              Movement & Comfort
-            </span>
-          </h1>
+      <section className="bg-white px-6 py-24">
+        <div className="mx-auto max-w-7xl">
 
-          <p className="mt-6 text-base leading-8 text-gray-500 md:text-lg">
-            Every condition is different. Our approach begins with understanding
-            your symptoms and individual needs.
-          </p>
-        </div>
+          {/* Heading */}
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#AE2580]">
+              Our Treatments
+            </p>
 
-        {/* Cards */}
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {treatments.map((treatment) => (
-            <Link
-              key={treatment.number}
-              to={`/treatments/${treatment.slug}`}
-              className="group relative block min-h-[270px] overflow-hidden rounded-[28px] border border-gray-100 bg-[#FAF7F9] p-8 transition-all duration-300 hover:-translate-y-2 hover:bg-[#252525] hover:shadow-2xl"
-            >
-              <span className="absolute -right-3 -top-8 text-[110px] font-black leading-none text-[#AE2580]/10 transition-all duration-300 group-hover:text-white/5">
-                {treatment.number}
+            <h1 className="mt-4 text-4xl font-bold leading-tight text-[#252525] md:text-6xl">
+              Treatment For Your
+              <br />
+              <span className="text-[#AE2580]">
+                Movement & Comfort
               </span>
+            </h1>
 
-              <div className="relative flex items-center justify-between">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#AE2580] shadow-sm transition-all duration-300 group-hover:bg-[#AE2580] group-hover:text-white">
-                  <span className="text-xl">✦</span>
-                </div>
+            <p className="mt-6 text-base leading-8 text-gray-500 md:text-lg">
+              Every condition is different. Our approach begins with understanding
+              your symptoms and individual needs.
+            </p>
+          </div>
 
-                <span className="text-sm font-semibold text-gray-400 transition-colors group-hover:text-white/40">
+          {/* Cards */}
+          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {treatments.map((treatment) => (
+              <Link
+                key={treatment.number}
+                to={`/treatments/${treatment.slug}`}
+                className="group relative block min-h-[270px] overflow-hidden rounded-[28px] border border-gray-100 bg-[#FAF7F9] p-8 transition-all duration-300 hover:-translate-y-2 hover:bg-[#252525] hover:shadow-2xl"
+              >
+                <span className="absolute -right-3 -top-8 text-[110px] font-black leading-none text-[#AE2580]/10 transition-all duration-300 group-hover:text-white/5">
                   {treatment.number}
                 </span>
-              </div>
 
-              <div className="relative mt-10">
-                <h2 className="text-2xl font-bold text-[#252525] transition-colors duration-300 group-hover:text-white">
-                  {treatment.title}
-                </h2>
+                <div className="relative flex items-center justify-between">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#AE2580] shadow-sm transition-all duration-300 group-hover:bg-[#AE2580] group-hover:text-white">
+                    <span className="text-xl">✦</span>
+                  </div>
 
-                <p className="mt-4 text-sm leading-7 text-gray-500 transition-colors duration-300 group-hover:text-white/65">
-                  {treatment.description}
-                </p>
-              </div>
+                  <span className="text-sm font-semibold text-gray-400 transition-colors group-hover:text-white/40">
+                    {treatment.number}
+                  </span>
+                </div>
 
-              <div className="absolute bottom-8 right-8 flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-[#AE2580] transition-all duration-300 group-hover:border-[#AE2580] group-hover:bg-[#AE2580] group-hover:text-white">
-                →
-              </div>
+                <div className="relative mt-10">
+                  <h2 className="text-2xl font-bold text-[#252525] transition-colors duration-300 group-hover:text-white">
+                    {treatment.title}
+                  </h2>
 
-              <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#AE2580] transition-all duration-500 group-hover:w-full" />
-            </Link>
-          ))}
-        </div>
+                  <p className="mt-4 text-sm leading-7 text-gray-500 transition-colors duration-300 group-hover:text-white/65">
+                    {treatment.description}
+                  </p>
+                </div>
 
-        {/* CTA */}
-        <div className="mt-16 overflow-hidden rounded-[32px] bg-[#252525] px-8 py-10 md:px-12">
-          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+                <div className="absolute bottom-8 right-8 flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-[#AE2580] transition-all duration-300 group-hover:border-[#AE2580] group-hover:bg-[#AE2580] group-hover:text-white">
+                  →
+                </div>
 
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-[#AE2580]">
-                Need Guidance?
-              </p>
-
-              <h3 className="mt-2 text-2xl font-bold text-white md:text-3xl">
-                Let's understand your condition first.
-              </h3>
-            </div>
-
-            <Link
-              to="/appointment"
-              className="rounded-xl bg-[#AE2580] px-7 py-3.5 font-semibold text-white transition hover:bg-[#8E1E68]"
-            >
-              Book Appointment
-            </Link>
-
+                <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#AE2580] transition-all duration-500 group-hover:w-full" />
+              </Link>
+            ))}
           </div>
-        </div>
 
-      </div>
-    </section>
+          {/* CTA */}
+          <div className="mt-16 overflow-hidden rounded-[32px] bg-[#252525] px-8 py-10 md:px-12">
+            <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-widest text-[#AE2580]">
+                  Need Guidance?
+                </p>
+
+                <h3 className="mt-2 text-2xl font-bold text-white md:text-3xl">
+                  Let's understand your condition first.
+                </h3>
+              </div>
+
+              <Link
+                to="/appointment"
+                className="rounded-xl bg-[#AE2580] px-7 py-3.5 font-semibold text-white transition hover:bg-[#8E1E68]"
+              >
+                Book Appointment
+              </Link>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </>
   );
 };
 
