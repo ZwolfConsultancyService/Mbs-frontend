@@ -21,7 +21,6 @@ const Navbar = () => {
           />
         </Link>
 
-
         {/* Desktop Menu */}
         <div className="hidden items-center gap-6 md:flex lg:gap-8">
 
@@ -46,12 +45,13 @@ const Navbar = () => {
             Treatments
           </Link>
 
-          <a
-            href="/gallery"
+          {/* Gallery */}
+          <Link
+            to="/gallery"
             className="font-medium text-dark transition hover:text-brand"
           >
             Gallery
-          </a>
+          </Link>
 
           <Link
             to="/appointment"
@@ -61,7 +61,6 @@ const Navbar = () => {
           </Link>
 
         </div>
-
 
         {/* Mobile Menu Button */}
         <button
@@ -74,7 +73,6 @@ const Navbar = () => {
         </button>
 
       </div>
-
 
       {/* Mobile Menu */}
       {isOpen && (
@@ -106,13 +104,14 @@ const Navbar = () => {
               Treatments
             </Link>
 
-            <a
-              href="/gallery"
+            {/* Gallery */}
+            <Link
+              to="/gallery"
               className="rounded-lg px-3 py-2.5 font-medium text-dark transition hover:bg-[#FAF7F9] hover:text-brand"
               onClick={() => setIsOpen(false)}
             >
               Gallery
-            </a>
+            </Link>
 
             <Link
               to="/appointment"
