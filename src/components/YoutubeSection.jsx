@@ -3,19 +3,14 @@ import { useState } from "react";
 const YoutubeSection = () => {
   const videos = [
     {
-      title: "Understanding Back & Spine Pain",
-      category: "Spine Care",
-      videoId: "YOUR_VIDEO_ID_1",
+      title: "Cervical Pain Treatment",
+      category: "Cervical Pain",
+      videoId: "DJ1yDe5Vw8A",
     },
     {
-      title: "Why Personalised Care Matters",
-      category: "Expert Advice",
-      videoId: "YOUR_VIDEO_ID_2",
-    },
-    {
-      title: "Common Causes of Knee Pain",
-      category: "Knee Care",
-      videoId: "YOUR_VIDEO_ID_3",
+      title: "Chiropractic Treatment for Neck Pain",
+      category: "Neck Pain",
+      videoId: "IOx0SZndW3k",
     },
   ];
 
@@ -27,7 +22,6 @@ const YoutubeSection = () => {
 
         {/* Heading */}
         <div className="mb-7 flex flex-col gap-3 sm:mb-9 sm:gap-4 md:flex-row md:items-end md:justify-between">
-
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#AE2580]">
               Watch & Learn
@@ -43,17 +37,16 @@ const YoutubeSection = () => {
             Helpful conversations and expert insights to help you understand
             your condition and make informed decisions about your care.
           </p>
-
         </div>
 
         {/* Main Video + Side Videos */}
         <div className="grid gap-4 sm:gap-5 lg:grid-cols-[1.55fr_0.8fr]">
 
           {/* Main Video */}
-          <div className="group relative overflow-hidden rounded-2xl bg-[#252525] sm:rounded-[24px]">
+          <div className="group relative overflow-hidden rounded-2xl bg-[#252525] shadow-sm sm:rounded-[24px]">
 
+            {/* YouTube Player */}
             <div className="relative aspect-[16/9] overflow-hidden">
-
               <iframe
                 key={activeVideo.videoId}
                 className="absolute inset-0 h-full w-full"
@@ -61,13 +54,11 @@ const YoutubeSection = () => {
                 title={activeVideo.title}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-              ></iframe>
-
+              />
             </div>
 
             {/* Video Info */}
             <div className="border-t border-white/10 bg-[#252525] px-5 py-4 sm:px-6 sm:py-5 md:px-7">
-
               <p className="mb-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-[#D88BC0] sm:mb-2 sm:text-[11px]">
                 {activeVideo.category}
               </p>
@@ -75,9 +66,7 @@ const YoutubeSection = () => {
               <h3 className="text-lg font-bold text-white sm:text-xl md:text-2xl">
                 {activeVideo.title}
               </h3>
-
             </div>
-
           </div>
 
           {/* Side Videos */}
@@ -85,9 +74,9 @@ const YoutubeSection = () => {
 
             {videos
               .filter((video) => video.videoId !== activeVideo.videoId)
-              .map((video, index) => (
+              .map((video) => (
                 <button
-                  key={index}
+                  key={video.videoId}
                   type="button"
                   onClick={() => setActiveVideo(video)}
                   className="
@@ -113,10 +102,8 @@ const YoutubeSection = () => {
                     sm:p-3
                   "
                 >
-
                   {/* Thumbnail */}
                   <div className="relative w-[38%] shrink-0 overflow-hidden rounded-xl sm:w-[42%] sm:rounded-[16px]">
-
                     <img
                       src={`https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`}
                       alt={video.title}
@@ -127,12 +114,10 @@ const YoutubeSection = () => {
                     <div className="absolute left-1/2 top-1/2 flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-[10px] text-[#AE2580] shadow-md sm:h-9 sm:w-9 sm:text-xs">
                       ▶
                     </div>
-
                   </div>
 
                   {/* Content */}
                   <div className="flex min-w-0 flex-1 flex-col justify-center">
-
                     <p className="text-[9px] font-bold uppercase tracking-[0.12em] text-[#AE2580] sm:text-[10px] sm:tracking-[0.15em]">
                       {video.category}
                     </p>
@@ -144,34 +129,47 @@ const YoutubeSection = () => {
                     <span className="mt-2 text-[10px] font-medium text-gray-400 sm:mt-3 sm:text-xs">
                       Play video →
                     </span>
-
                   </div>
-
                 </button>
               ))}
 
           </div>
-
         </div>
 
         {/* Bottom Line */}
-        <div className="mt-6 flex flex-col gap-2 border-t border-gray-200 pt-4 sm:mt-8 sm:flex-row sm:items-center sm:justify-between sm:pt-5">
+        <div className="mt-6 flex flex-col gap-3 border-t border-gray-200 pt-4 sm:mt-8 sm:flex-row sm:items-center sm:justify-between sm:pt-5">
 
           <p className="text-[11px] text-gray-400 sm:text-xs">
             More conversations & insights on our YouTube channel
           </p>
 
           <a
-            href="https://www.youtube.com/"
+            href="https://www.youtube.com/@pawansrivastava749"
             target="_blank"
-            rel="noreferrer"
-            className="text-xs font-bold text-[#AE2580] transition hover:opacity-70 sm:text-sm"
+            rel="noopener noreferrer"
+            className="
+              inline-flex
+              items-center
+              justify-center
+              rounded-full
+              bg-[#AE2580]
+              px-5
+              py-2.5
+              text-xs
+              font-bold
+              text-white
+              transition
+              duration-300
+              hover:-translate-y-0.5
+              hover:bg-[#8F1D68]
+              hover:shadow-lg
+              sm:text-sm
+            "
           >
-            Visit Channel ↗
+            Visit YouTube Channel ↗
           </a>
 
         </div>
-
       </div>
     </section>
   );
