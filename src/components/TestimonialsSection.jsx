@@ -7,7 +7,7 @@ const TestimonialsSection = () => {
     },
     {
       name: "Anurag Yadav",
-      treatment: "Dizziness & Vomiting",
+      treatment: "Dizziness &c Vomiting",
       text: "I was suffering from dizziness and vomiting for the last 4 months. I changed 3 Chiropractors in Delhi but got relief only for 2-3 days. Dr. Pawan Srivastava's technique is unmatched. He diagnosed my problem and gave me relief within a week through natural methods. I am 101% satisfied. Thank you very much Doctor.",
     },
     {

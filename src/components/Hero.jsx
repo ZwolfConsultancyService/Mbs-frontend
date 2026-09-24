@@ -16,9 +16,9 @@ const Hero = () => {
           </p>
 
           <h1 className="mb-4 text-3xl font-bold leading-tight text-[#252525] sm:text-4xl md:mb-6 md:text-6xl">
-            Holistic Healing
+            MBS
             <br />
-            for a Better You.
+            Chiropractic Centre
           </h1>
 
           <p className="mb-6 max-w-xl text-base leading-7 text-gray-600 sm:text-lg sm:leading-8 md:mb-8">

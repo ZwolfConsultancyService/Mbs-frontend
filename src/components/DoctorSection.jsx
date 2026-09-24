@@ -24,7 +24,7 @@ const DoctorSection = () => {
             </p>
 
             <p className="mt-0.5 text-xs text-white/60 sm:mt-1 sm:text-sm">
-              Mind Body Soul
+              Chiropractic Centre
             </p>
           </div>
 

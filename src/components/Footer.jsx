@@ -18,11 +18,12 @@ const Footer = () => {
               </h2>
 
               <p className="mt-0.5 text-[10px] font-semibold tracking-[0.25em] text-white/60 sm:text-xs">
-                MIND BODY SOUL
+                CHIROPRACTIC CENTRE
               </p>
 
               <p className="mt-1 text-[9px] tracking-[0.15em] text-white/40 sm:text-[10px]">
-                ALTERNATIVE MEDICINE HEALTH SOLUTIONS
+                Holistic Healing
+for a Better You.
               </p>
             </div>
 
@@ -174,7 +175,7 @@ const Footer = () => {
                   <br />
                   IGNOU Road, Saidulajab,
                   <br />
-                  New Delhi - 282001
+                  New Delhi - 110030
                 </p>
 
               </div>
